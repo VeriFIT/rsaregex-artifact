@@ -1,0 +1,21 @@
+grep:
+  cmd: /home/xvasak01/pycotest/pycobench/bin/grep-wrap.py $1
+
+re:
+  cmd: /home/xvasak01/pycotest/pycobench/bin/re-wrap.py $1
+
+pcre2:
+  cmd: /home/xvasak01/pycotest/pycobench/bin/pcre2-wrap.py $1
+
+rsaregex:
+    cmd: /home/xvasak01/pycotest/pycobench/bin/rsaregex-wrap.py $1
+
+js:
+  cmd: /home/xvasak01/pycotest/pycobench/bin/js-wrap.py $1
+
+java:
+  cmd: /home/xvasak01/pycotest/pycobench/bin/java-wrap.py $1
+
+net:
+  cmd: /home/xvasak01/pycotest/pycobench/bin/net-wrap.py $1
+
