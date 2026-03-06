@@ -2,7 +2,7 @@
 from attack_unpacker import unpack_attack
 import sys
 import time
-sys.path.append("/home/xvasak01/rsa_matcher_new/RegisterSetAutomata")
+sys.path.append("..")
 import rsaregex as rsa
 import signal
 import traceback
