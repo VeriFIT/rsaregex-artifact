@@ -1,7 +1,7 @@
 import json
 
-ATTACK_FILE = "/home/xvasak01/rsa_matcher_new/RegisterSetAutomata/data/rengar_nra_constructed.json"
-ATTACK_FILE = "/home/xvasak01/rsa_matcher_new/RegisterSetAutomata/data/lf_nra_constructed.json"
+ATTACK_FILE = "../rengar_nra_constructed.json"
+ATTACK_FILE = "../lf_nra_constructed.json"
 
 
 def unpack_attack(line_num: int):
