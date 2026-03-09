@@ -21,4 +21,6 @@ if result.stdout.strip() == "True":
 elif result.stdout.strip() == "False":
     print(False)
 else:
+    print(result.stdout)
+    print(result.stderr)
     raise Exception

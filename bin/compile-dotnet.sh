@@ -1,1 +1,1 @@
-dotnet build RegexMatcherApp/RegexMatcherApp.csproj -c Release
+dotnet build RegexMatcherApp/RegexMatcherApp.csproj
