@@ -336,7 +336,7 @@ def table_runover(df, file_suffix):
 
 
 df = get_df_all()
-#df = df[df["rsaregex-runtime"] <= TIMEOUT_VAL]
+df = df[df["rsaregex-runtime"] < TIMEOUT_VAL]
 
 gen_evaluation(df, RSAREGEXMAT, TOOLS, toolname="rsamatch")
 

@@ -92,6 +92,7 @@ def rsa_is_char_in(char, t):
 
 def rsa_intersect_n_sets(sets):
     '''intersects all sets specified in param sets'''
+    # cachovat pro stejne mnoziny stavu
     n = len(sets)
     if n >= 1:
         tmp = sets[0]
@@ -311,6 +312,27 @@ class DRsA(RsA):
             newConf[r] = tmp
         return newConf
     
+    #tests guards of a transition
+    def _create_memb_map(self, input, regConf,):
+        memb_map = dict()
+        for r in self.R:
+            if input in regConf[r]:
+                memb_map[r] = True
+            else:
+                memb_map[r] = False
+        return memb_map
+    
+    #tests guards of a transition
+    def _test_memb_map(self, memb_map, eqG, diseqG):
+        for g in eqG:
+            if not memb_map[g]:
+                return False
+                
+        for g in diseqG:
+            if memb_map[g]:
+                return False
+        return True
+
     #tests guards of a transition
     def _guard_test(self, input, regConf, eqG, diseqG):
         for g in eqG:
