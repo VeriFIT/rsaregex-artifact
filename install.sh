@@ -5,9 +5,12 @@ cd packages
 sudo dpkg -i *.deb
 
 cd ../tools-install-files
-for script in install-*.sh; do
-    ./"$script"
-done
+./install-python.sh
+./install-pcre2.sh
+./install-grep.sh
+./install-js.sh
+./install-java.sh
+./install-dotnet.sh
 
 cd ../pip-packages
 python -m pip install ./*
