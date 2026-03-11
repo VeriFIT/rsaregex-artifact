@@ -1,3 +1,6 @@
+#!/bin/bash
+
+echo "Installing PCRE2..."
 tar xzvf pcre2.py.tar.gz
 cd ./pcre2.py
 

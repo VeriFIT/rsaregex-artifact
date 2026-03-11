@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Installing .NET SDK 8.0.124..."
 cat dotnet-sdk-8.0.124-linux-x64.tar.gz.part_* > dotnet-sdk-8.0.124-linux-x64.tar.gz
 sudo mkdir -p /usr/share/dotnet
