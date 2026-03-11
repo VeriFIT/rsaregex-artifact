@@ -38,3 +38,9 @@ cd ..
 ```
 
 This prints a textual table as in the paper, and generates pdf scatterplots comparing the tool to all the other tools.
+
+To test that everything works with a shorter experiment, instead of `./run-measurements.sh`, you can run
+`./run-very-short` which runs the first 5 experiments of each data set.
+You can then generate the evaluation the same way.
+
+Note that running ANY experiment overwrites the results (stored in `results/(lf|rengar).(output|csv)`).
