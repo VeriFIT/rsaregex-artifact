@@ -6,14 +6,17 @@ sudo dpkg -i *.deb
 
 cd ../tools-install-files
 ./install-python.sh
+
+cd ../pip-packages
+python -m pip install ./*
+sudo python -m pip install ./*
+
+cd ../tools-install-files
 ./install-pcre2.sh
 ./install-grep.sh
 ./install-js.sh
 ./install-java.sh
 ./install-dotnet.sh
 
-cd ../pip-packages
-python -m pip install ./*
-sudo python -m pip install ./*
 
 
