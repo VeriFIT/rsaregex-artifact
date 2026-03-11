@@ -13,7 +13,7 @@ public class RegexMatcher {
 
         try {
             bool isMatch = Regex.IsMatch(input, pattern);
-            Console.WriteLine(isMatch); // Output "True" or "False"
+            Console.WriteLine(isMatch);
         } catch (Exception e) {
             Console.WriteLine("Invalid regex pattern"); Environment.Exit(1);
         }

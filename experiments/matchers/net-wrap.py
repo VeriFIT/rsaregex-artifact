@@ -7,7 +7,7 @@ import subprocess
 
 pattern, attack_string = unpack_attack(int(sys.argv[1]))
 
-exe_path = os.path.join("RegexMatcherApp", "bin", "Debug", "net8.0", "RegexMatcherApp.dll")
+exe_path = os.path.join("matchers", "RegexMatcherApp", "bin", "Debug", "net8.0", "RegexMatcherApp.dll")
 
 command = ["dotnet", exe_path, attack_string, pattern]
 result = subprocess.run(command,

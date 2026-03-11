@@ -6,7 +6,7 @@ import subprocess
 
 pattern, attack_string = unpack_attack(int(sys.argv[1]))
 
-command = ["java", "RegexMatcher", attack_string, pattern]
+command = ["java", "-cp", "matchers", "RegexMatcher", attack_string, pattern]
 result = subprocess.run(command,
                         capture_output=True,
                         text=True,

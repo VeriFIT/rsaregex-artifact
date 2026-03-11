@@ -6,7 +6,7 @@ import subprocess
 
 pattern, attack_string = unpack_attack(int(sys.argv[1]))
 
-command = ["node", "regexMatcher.js", attack_string, pattern]
+command = ["node", "./matchers/regexMatcher.js", attack_string, pattern]
 result = subprocess.run(command,
                         capture_output=True,
                         text=True,

@@ -9,7 +9,7 @@ public class RegexMatcher {
         
         try {
             boolean match = input.matches(pattern);
-            System.out.println(match); // Outputs "true" or "false"
+            System.out.println(match);
         } catch (Exception e) {
             System.out.println("Invalid regex pattern");
             System.exit(1);
