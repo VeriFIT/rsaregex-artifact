@@ -30,8 +30,8 @@ TOOLS = [
 
 
 FILES = [
-    "lf.csv",
-    "rengar.csv"
+    "results/lf.csv",
+    "results/rengar.csv"
 ]
 
 

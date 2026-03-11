@@ -1,0 +1,21 @@
+grep:
+  cmd: ./matchers/grep-wrap.py $1
+
+re:
+  cmd: ./matchers/re-wrap.py $1
+
+pcre2:
+  cmd: ./matchers/pcre2-wrap.py $1
+
+rsaregex:
+    cmd: ./matchers/rsaregex-wrap.py $1
+
+js:
+  cmd: ./matchers/js-wrap.py $1
+
+java:
+  cmd: ./matchers/java-wrap.py $1
+
+net:
+  cmd: ./matchers/net-wrap.py $1
+

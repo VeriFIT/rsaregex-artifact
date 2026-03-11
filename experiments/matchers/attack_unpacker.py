@@ -1,6 +1,6 @@
 import json
 
-ATTACK_FILE = "../rengar_nra_constructed.json"
+ATTACK_FILE = "./inputs/lf_nra_constructed.json"
 
 def unpack_attack(line_num: int):
     file =  open(ATTACK_FILE, 'r')
