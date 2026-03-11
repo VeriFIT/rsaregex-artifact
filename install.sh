@@ -19,4 +19,6 @@ cd ../tools-install-files
 ./install-dotnet.sh
 
 
-
+cd ../experiments/matchers
+./compile-java.sh
+./compile-dotnet.sh
