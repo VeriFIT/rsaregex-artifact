@@ -5,7 +5,7 @@ NPROC=$(nproc)
 echo "Installing Python 3.10.12..."
 tar -xzf Python-3.10.12.tgz
 cd Python-3.10.12
-./configure --prefix=/usr/local
+./configure --prefix=/usr/local --enable-optimizations
 make -j$NPROC
 sudo make altinstall
 cd ..
