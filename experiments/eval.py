@@ -27,7 +27,7 @@ TOOLS = [
     "pcre2",
     "js",
     "java",
-    #"net",
+    "net",
 ]
 
 
@@ -76,7 +76,7 @@ def get_df_all(filter_func = (lambda x: x)):
   df_all = pd.concat(dfs)[["name"] + [f(tool) for tool in TOOLS for f in (lambda x: x+"-result", lambda x: x+"-runtime")] + ["benchmark"]]
   return df_all
 
-def gen_evaluation(df, main_tool, all_tools, file_suffix = "", toolname = "rsamatch"):
+def gen_evaluation(df, main_tool, all_tools, file_suffix = "", toolname = "rsaregexMat"):
 
     print(f"time:  {datetime.datetime.now()}")
     print(f"# of attacks: {len(df)}")
@@ -118,10 +118,9 @@ def gen_evaluation(df, main_tool, all_tools, file_suffix = "", toolname = "rsama
                                 row_dict['median'],
                                 row_dict['std'],
                                 unknown_row['timeouts'],
-                                unknown_row['errors'],
-                                unknown_row["unknowns"]])
+                                unknown_row['errors']])
 
-    headers = ["method", "max", "mean", "median", "std. dev", "timeouts", "errors", "unknowns"]
+    headers = ["method", "max", "mean", "median", "std. dev", "timeouts", "errors"]
     print(tab.tabulate(tab_interesting, headers=headers, tablefmt="github"))
     print("\n\n")
 
@@ -270,8 +269,7 @@ def histogram(df, bins=10, log=True):
 
 
 def table_runover(df, file_suffix):
-    runtime_columns = [col for col in df.columns if "runtime" in col]
-
+    runtime_columns = [col for col in df.columns if "runtime" in col and col != "rsaregex-runtime"]
 
     # Replace "TO" and "ERR" values and convert columns to numeric
     df_new = df.replace("TO", TIMEOUT_VAL).replace("ERR", np.nan)
@@ -340,5 +338,5 @@ def table_runover(df, file_suffix):
 df = get_df_all()
 df = df[df["rsaregex-runtime"] < TIMEOUT_VAL]
 
-gen_evaluation(df, RSAREGEXMAT, TOOLS, toolname="rsamatch")
+gen_evaluation(df, RSAREGEXMAT, [RSAREGEXMAT,"grep", "re", "pcre2", "js", "java", "net"], toolname="rsamatch")
 
