@@ -97,6 +97,7 @@ def gen_evaluation(df, main_tool, all_tools, file_suffix = "", toolname = "rsare
         if re.search('-runtime$', col):
             #df[col] = df[col].replace(['TO', 'ERR', 'MISSING'], np.nan)
             df[col] = pd.to_numeric(df[col], errors='coerce')
+            df = df[df[col] < 100.0]
             summary_times[col] = dict()
             summary_times[col]['max'] = df[col].max()
             summary_times[col]['min'] = df[col].min()
@@ -113,15 +114,16 @@ def gen_evaluation(df, main_tool, all_tools, file_suffix = "", toolname = "rsare
         row_dict.update({'name': i})
         tab_interesting.append([row_dict['name'],
                                 # row_dict['min'],
-                                row_dict['max'],
+                                # row_dict['max'],
                                 row_dict['mean'],
                                 row_dict['median'],
                                 row_dict['std'],
-                                unknown_row['timeouts'],
-                                unknown_row['errors']])
-    
-    print("\n\n")
-    headers = ["method", "max", "mean", "median", "std. dev", "timeouts", "errors"]
+                                #unknown_row['timeouts'],
+                                #unknown_row['errors']
+                                ])
+
+    # headers = ["method", "max", "mean", "median", "std. dev", "timeouts", "errors"]
+    headers = ["method", "mean", "median", "std. dev"]
     print(tab.tabulate(tab_interesting, headers=headers, tablefmt="github"))
     print("\n\n")
 
