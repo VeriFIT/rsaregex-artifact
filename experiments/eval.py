@@ -119,7 +119,8 @@ def gen_evaluation(df, main_tool, all_tools, file_suffix = "", toolname = "rsare
                                 row_dict['std'],
                                 unknown_row['timeouts'],
                                 unknown_row['errors']])
-
+    
+    print("\n\n")
     headers = ["method", "max", "mean", "median", "std. dev", "timeouts", "errors"]
     print(tab.tabulate(tab_interesting, headers=headers, tablefmt="github"))
     print("\n\n")
