@@ -8,13 +8,13 @@ This is an artifact reproducing the experimental results of the above paper.
 
 We used VirtualBox (https://www.virtualbox.org/wiki/Downloads). To import the VM in VirtualBox, File -> Import Appliance -> select the .ova file.
 
-2. Start the VM, log in, and open the terminal.
+2. Start the VM, log in, and open xterm (pinned to the dash).
 
 username: artifact
 
 password: artifact
 
-3. Enter the directory `/home/artifact/rsaregex-artifact`.
+3. Enter the directory `/home/artifact/rsaregex-artifact` with `cd rsaregex-artifact`.
 
 4. Run the smoke test experiments by running `./run-very-short.sh`.
 
@@ -23,26 +23,26 @@ After the script finishes running, the output can be found in `./experiments/sho
 The contents of the `short-run-results.txt` file should look similar to this:
 
 ```
-time:  2026-03-17 16:04:10.915190
-# of attacks: 1246
+time:  2026-03-17 19:46:01.133194
+# of attacks: 9
 | Tool        |   < 1 s |   1--5 s |   5--10 s |   10--50 s |   50--100 s |   > 100 s (TOs) |   Errors |   > 1 s |
 |-------------|---------|----------|-----------|------------|-------------|-----------------|----------|---------|
-| rsaregexMat |    1241 |        5 |         0 |          0 |           0 |               0 |        0 |       5 |
-| grep        |    1131 |        6 |         0 |         16 |           2 |              17 |       74 |      41 |
-| re          |    1139 |       37 |        15 |          9 |           3 |              43 |        0 |     107 |
-| pcre2       |    1001 |       14 |         3 |          5 |           0 |               2 |      221 |      24 |
-| js          |     660 |        8 |         1 |         11 |           1 |              33 |      532 |      54 |
-| java        |     596 |       17 |         5 |          7 |           5 |              19 |      597 |      53 |
-| net         |     629 |       22 |        14 |         10 |           3 |              40 |      528 |      89 |
-| method      |     mean |   median |   std. dev |
-|-------------|----------|----------|------------|
-| rsaregexMat | 0.353152 | 0.194007 |   0.358656 |
-| grep        | 0.530303 | 0.01     |   4.79116  |
-| re          | 0.530931 | 0.01     |   4.34277  |
-| pcre2       | 0.147978 | 0.01     |   1.30814  |
-| js          | 0.284545 | 0.03     |   1.68678  |
-| java        | 0.711651 | 0.05     |   5.0552   |
-| net         | 0.923981 | 0.03     |   4.62945  |
+| rsaregexMat |       9 |        0 |         0 |          0 |           0 |               0 |        0 |       0 |
+| grep        |       9 |        0 |         0 |          0 |           0 |               0 |        0 |       0 |
+| re          |       8 |        0 |         1 |          0 |           0 |               0 |        0 |       1 |
+| pcre2       |       9 |        0 |         0 |          0 |           0 |               0 |        0 |       0 |
+| js          |       7 |        0 |         0 |          0 |           0 |               0 |        2 |       0 |
+| java        |       6 |        0 |         0 |          0 |           0 |               0 |        3 |       0 |
+| net         |       6 |        0 |         0 |          1 |           0 |               0 |        2 |       1 |
+| method      |      mean |   median |   std. dev |
+|-------------|-----------|----------|------------|
+| rsaregexMat | 0.216272  | 0.196367 | 0.111951   |
+| grep        | 0.0244444 | 0.01     | 0.0433333  |
+| re          | 0.747778  | 0.01     | 2.09885    |
+| pcre2       | 0.02      | 0.01     | 0.03       |
+| js          | 0.144286  | 0.03     | 0.311226   |
+| java        | 0.0566667 | 0.055    | 0.00816497 |
+| net         | 1.82143   | 0.03     | 4.66514    |
 ```
 
 ## Full experiment reproduction
