@@ -4,4 +4,4 @@ cd experiments
 cd results
 ./create-csvs.sh
 cd ..
-./eval.py
+./eval.py > "evaluation-results.txt"

@@ -11,4 +11,4 @@ cat ./inputs/very_short.input | ./pycobench -c ./config.yaml -j 1 -t 100 -o ./re
 cd results
 ./create-csvs.sh
 cd ..
-./eval.py
+./eval.py > "short-run-results.txt"
