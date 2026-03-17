@@ -7,6 +7,7 @@ import datetime
 import numpy as np
 import plotnine as p9
 import mizani.formatters as mizani
+import sys
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -172,7 +173,7 @@ def gen_evaluation(df, main_tool, all_tools, file_suffix = "", toolname = "rsare
     print("Generating plots...")
     for x, y, filename, plot in plot_list:
         #filename = f"plots/{out_prefix}_{filename}.pdf"
-        print(f"plotting x: {x}, y: {y}... saving to {filename}")
+        print(f"plotting x: {x}, y: {y}... saving to {filename}", file=sys.stderr)
         # plot.save(filename, scale_factor=2)
         plot.save(filename=filename, dpi=1000)
         plot.show()
@@ -342,4 +343,3 @@ df = get_df_all()
 df = df[df["rsaregex-runtime"] < TIMEOUT_VAL]
 
 gen_evaluation(df, RSAREGEXMAT, [RSAREGEXMAT,"grep", "re", "pcre2", "js", "java", "net"], toolname="rsamatch")
-
