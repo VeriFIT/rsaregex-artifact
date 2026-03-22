@@ -11,7 +11,7 @@ sudo make altinstall
 cd ..
 rm -rf Python-3.10.12
 
-sudo update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10 2
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.10 2 
-echo "0" | sudo update-alternatives --config python
-echo "0" | sudo update-alternatives --config python3
+# sudo update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10 2
+# sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.10 2 
+# echo "0" | sudo update-alternatives --config python
+# echo "0" | sudo update-alternatives --config python3
