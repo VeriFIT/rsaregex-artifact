@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/bin/python3.10
 
 import pandas as pd
 import tabulate as tab

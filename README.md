@@ -14,6 +14,8 @@ username: artifact
 
 password: artifact
 
+The VM requires at least 8 GiB of memory, a single core, and at least 25 GiB of storage available.
+
 3. Enter the directory `/home/artifact/rsaregex-artifact` with `cd rsaregex-artifact`.
 
 4. Run the smoke test experiments by running `./run-very-short.sh`.

@@ -1,4 +1,4 @@
-#!/usr/bin/python3.10
+#!/usr/local/bin/python3.10
 from attack_unpacker import unpack_attack
 import sys
 import time
