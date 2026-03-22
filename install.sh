@@ -8,8 +8,8 @@ cd ../tools-install-files
 ./install-python.sh
 
 cd ../pip-packages
-python -m pip install ./*
-sudo python -m pip install ./*
+python3.10 -m pip install ./*
+# sudo python -m pip install ./*
 
 cd ../tools-install-files
 ./install-pcre2.sh

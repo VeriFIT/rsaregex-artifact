@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3.10
 
 from attack_unpacker import unpack_attack
 import os
