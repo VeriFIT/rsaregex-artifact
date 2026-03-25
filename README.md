@@ -8,7 +8,7 @@ This is an artifact reproducing the experimental results of the above paper.
 
 We used VirtualBox (https://www.virtualbox.org/wiki/Downloads). To import the VM in VirtualBox, File -> Import Appliance -> select the .ova file.
 
-2. Start the VM, log in, and open xterm (pinned to the dash).
+2. Start the VM, log in, and open terminal (pinned to the dash).
 
 username: artifact
 
