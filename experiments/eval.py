@@ -98,13 +98,13 @@ def gen_evaluation(df, main_tool, all_tools, file_suffix = "", toolname = "rsare
         if re.search('-runtime$', col):
             #df[col] = df[col].replace(['TO', 'ERR', 'MISSING'], np.nan)
             df[col] = pd.to_numeric(df[col], errors='coerce')
-            df = df[df[col] < 100.0]
+            df2 = df[df[col] < 100.0]
             summary_times[col] = dict()
-            summary_times[col]['max'] = df[col].max()
-            summary_times[col]['min'] = df[col].min()
-            summary_times[col]['mean'] = df[col].mean()
-            summary_times[col]['median'] = df[col].median()
-            summary_times[col]['std'] = df[col].std()
+            summary_times[col]['max'] = df2[col].max()
+            summary_times[col]['min'] = df2[col].min()
+            summary_times[col]['mean'] = df2[col].mean()
+            summary_times[col]['median'] = df2[col].median()
+            summary_times[col]['std'] = df2[col].std()
 
     df_summary_times = pd.DataFrame(summary_times).transpose()
     tab_interesting = []
@@ -231,6 +231,8 @@ def scatter_plot(df, xcol, ycol, domain, xname=None, yname=None, log=False, widt
 
     scatter += p9.theme(legend_position='bottom')
     scatter += p9.theme(legend_position="none")#remove legend
+
+    scatter += p9.scale_color_brewer(type="qual", palette="Set1", direction=-1)
 
     res = scatter
 
